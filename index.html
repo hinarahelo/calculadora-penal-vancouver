@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora TJ Oasis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="watermark"></div>
+
+<header class="header-oficial">
+  <div class="faixas-topo">
+    <div class="faixa esquerda"></div>
+    <img src="logo-oasis.png" class="brasao-topo" alt="Brasão TJ Oasis">
+    <div class="faixa direita"></div>
+  </div>
+  <h1>CALCULADORA TRIBUNAL DE JUSTIÇA DE OASIS</h1>
+  <h2>1ª VARA CÍVEL E CRIMINAL</h2>
+</header>
+
+<main class="container">
+
+  <div class="search-box">
+    <input id="searchInput" placeholder="Digite o número ou nome do artigo">
+    <button id="searchButton">🔍 Pesquisar</button>
+  </div>
+
+  <div id="artigosContainer" style="display:none"></div>
+
+  <div class="form-group">
+    <strong>Atenuantes</strong>
+    <div class="bloco">
+      <label><input type="checkbox" class="atenuante" data-percent="0.10"> Réu Primário (−10%)</label>
+      <label><input type="checkbox" class="atenuante" data-percent="0.15"> Confissão Espontânea (−15%)</label>
+      <label><input type="checkbox" class="atenuante" data-percent="0.10"> Bons Antecedentes (−10%)</label>
+      <label><input type="checkbox" class="atenuante" data-percent="0.20"> Colaboração com a Justiça (−20%)</label>
+      <label><input type="checkbox" class="atenuante" data-percent="0.20"> Advogado Constituído (−20%)</label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <strong>Atendimentos Jurídicos</strong>
+    <div class="bloco">
+      <label><input type="checkbox" class="honorario" data-valor="20000"> Delegacia Sul — R$ 20.000</label>
+      <label><input type="checkbox" class="honorario" data-valor="30000"> Delegacia PRF — R$ 30.000</label>
+    </div>
+  </div>
+
+  <button class="calculate-btn" onclick="calcular()">Calcular Pena</button>
+  <button class="calculate-btn secondary" onclick="limparCalculo()">Limpar Cálculo</button>
+
+  <div id="resultado" class="result"></div>
+
+</main>
+
+<footer class="footer-oficial">
+  <div class="faixas-rodape"></div>
+
+  <div class="texto-footer">
+    Documento Oficial – Tribunal de Justiça de Oasis<br>
+    <span class="footer-credit">Calculadora desenvolvida por Hinara Heloar</span>
+  </div>
+
+  <div class="faixas-rodape"></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
