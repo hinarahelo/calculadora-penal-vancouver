@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
 
+:root{
+  /* Paleta “documento oficial” */
+  --ink: #1b1b1b;          /* preto/tinta */
+  --sepia: #6a5a4f;        /* marrom acinzentado (linhas) */
+  --sepia-2: #8a7a6f;      /* variação mais clara */
+  --paper: #f1eee7;        /* fundo do container */
+  --paper-2: #fbf9f8;      /* cards internos */
+  --shadow: rgba(0,0,0,0.14);
+  --shadow-soft: rgba(27,27,27,0.12);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +30,7 @@ body {
   inset: 0;
   background: url('logo-oasis.png') no-repeat center;
   background-size: 420px;
-  opacity: 0.04;
+  opacity: 0.035; /* um pouco mais “documento” */
   pointer-events: none;
   z-index: 0;
 }
@@ -42,10 +53,10 @@ body {
   flex: 1;
   height: 40px;
   background:
-    linear-gradient(#000 3px, transparent 3px) top,
-    linear-gradient(#192380 3px, transparent 3px) 12px,
-    linear-gradient(#192380 3px, transparent 3px) 24px,
-    linear-gradient(#000 3px, transparent 3px) 36px;
+    linear-gradient(var(--ink) 3px, transparent 3px) top,
+    linear-gradient(var(--sepia) 3px, transparent 3px) 12px,
+    linear-gradient(var(--sepia) 3px, transparent 3px) 24px,
+    linear-gradient(var(--ink) 3px, transparent 3px) 36px;
   background-repeat: no-repeat;
   background-size: 100% 3px;
 }
@@ -54,6 +65,8 @@ body {
   height: 100px;
   margin: 0 20px;
   z-index: 2;
+  filter: grayscale(100%); /* deixa o brasão mais “documento” sem alterar arquivo */
+  opacity: 0.95;
 }
 
 .header-oficial h1 {
@@ -61,6 +74,7 @@ body {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
+  color: var(--ink);
 }
 
 .header-oficial h2 {
@@ -68,6 +82,7 @@ body {
   font-size: 14px;
   font-weight: 600;
   margin-top: 2px;
+  color: var(--ink);
 }
 
 /* ===== CONTAINER ===== */
@@ -77,9 +92,10 @@ body {
   max-width: 1100px;
   margin: 30px auto;
   padding: 28px;
-  background: #f1eee7;
+  background: var(--paper);
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px var(--shadow);
+  border: 1px solid rgba(0,0,0,0.08);
 }
 
 /* BUSCA */
@@ -93,17 +109,29 @@ body {
   flex: 1;
   padding: 14px 16px;
   border-radius: 8px;
-  border: 2px solid #192380;
+  border: 2px solid var(--sepia);
   font-size: 15px;
+  background: rgba(255,255,255,0.55);
+  outline: none;
+}
+
+.search-box input:focus{
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(27,27,27,0.10);
 }
 
 .search-box button {
-  background: #192380;
+  background: var(--ink);
   color: #fff;
   border: none;
   padding: 14px 20px;
   border-radius: 8px;
   font-weight: 700;
+  cursor: pointer;
+}
+
+.search-box button:hover{
+  filter: brightness(1.05);
 }
 
 /* ARTIGOS */
@@ -115,18 +143,19 @@ body {
 }
 
 .article {
-  background: #fbf9f8;
-  border-left: 6px solid #192380;
+  background: var(--paper-2);
+  border-left: 6px solid var(--sepia);
   border-radius: 10px;
   padding: 14px 16px;
-  box-shadow: 0 4px 12px rgba(25,35,128,0.12);
+  box-shadow: 0 4px 12px var(--shadow-soft);
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .article strong {
   display: block;
   font-size: 15px;
   font-weight: 800;
-  color: #192380;
+  color: var(--ink);
   margin-bottom: 6px;
 }
 
@@ -135,6 +164,11 @@ body {
   line-height: 1.5;
   color: #000;
   margin-bottom: 4px;
+}
+
+.article label{
+  font-size: 13px;
+  color: #111;
 }
 
 /* FORMULÁRIOS */
@@ -154,30 +188,40 @@ body {
   margin-top: 16px;
   width: 100%;
   padding: 15px;
-  background: #192380;
+  background: var(--ink);
   color: #fff;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   font-weight: 800;
+  cursor: pointer;
+}
+
+.calculate-btn:hover{
+  filter: brightness(1.05);
 }
 
 .calculate-btn.secondary {
-  background: #2436b8;
+  background: var(--sepia);
+}
+
+.calculate-btn.secondary:hover{
+  filter: brightness(1.06);
 }
 
 /* RESULTADO */
 .result {
   margin-top: 22px;
   padding: 18px;
-  background: #fbf9f8; /* COR RESTAURADA */
-  border-left: 6px solid #192380;
+  background: var(--paper-2);
+  border-left: 6px solid var(--sepia);
   border-radius: 10px;
   font-size: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .result strong {
-  color: #192380;
+  color: var(--ink);
 }
 
 /* ===== RODAPÉ LIMPO ===== */
@@ -193,18 +237,20 @@ body {
 .texto-footer {
   font-size: 13px;
   font-weight: 600;
+  color: var(--ink);
 }
 
 .footer-credit {
   margin-top: 4px;
   font-size: 11px;
   opacity: 0.85;
+  color: var(--ink);
 }
 
 /* ===== MOBILE ===== */
 @media (max-width: 768px) {
   .bloco {
-    gap: 6px; /* Espaçamento reduzido com conforto para toque */
+    gap: 6px;
   }
 
   .form-group label {
