@@ -117,15 +117,23 @@ const colaboracaoCheck = document.getElementById("colaboracaoCheck");
 const colaboracaoPercent = document.getElementById("colaboracaoPercent");
 const agravanteServidor = document.getElementById("agravanteServidor");
 
+function renderEstadoInicialResultado() {
+  resultado.innerHTML = `
+    <div class="document-empty">
+      O resultado do cálculo será exibido aqui em formato de documento judicial.
+    </div>
+  `;
+}
+
 function renderArtigos(lista) {
   artigosContainer.innerHTML = "";
   artigosContainer.style.display = "grid";
 
   if (!lista.length) {
     artigosContainer.innerHTML = `
-      <div class="artigo-card">
-        <div class="artigo-titulo">Nenhum artigo encontrado.</div>
-        <p class="artigo-descricao">Pesquise pelo número, nome ou termo relacionado ao artigo.</p>
+      <div class="article-card">
+        <div class="article-title">Nenhum artigo encontrado.</div>
+        <p class="article-description">Pesquise pelo número, nome ou termo relacionado ao artigo.</p>
       </div>
     `;
     return;
@@ -135,25 +143,25 @@ function renderArtigos(lista) {
     const marcado = artigosSelecionados.has(artigo.numero);
 
     const card = document.createElement("div");
-    card.className = "artigo-card";
+    card.className = "article-card";
 
     card.innerHTML = `
-      <div class="artigo-topo">
-        <div class="artigo-titulo">Art. ${artigo.numero} — ${artigo.nome}</div>
-        <div class="badge-categoria">${artigo.categoria}</div>
+      <div class="article-top">
+        <div class="article-title">Art. ${artigo.numero} — ${artigo.nome}</div>
+        <div class="article-badge">${artigo.categoria}</div>
       </div>
 
-      <p class="artigo-descricao">${artigo.descricao}</p>
+      <p class="article-description">${artigo.descricao}</p>
 
-      <div class="artigo-metas">
+      <div class="article-meta">
         <span><strong>Pena:</strong> ${artigo.pena === 0 ? "Isento / 0 meses" : `${artigo.pena} meses`}</span>
         <span><strong>Multa:</strong> R$ ${formatarMoeda(artigo.multa)}</span>
         <span><strong>Fiança:</strong> ${formatarFianca(artigo.fianca)}</span>
       </div>
 
-      ${artigo.observacao ? `<div class="artigo-obs">${artigo.observacao}</div>` : ""}
+      ${artigo.observacao ? `<div class="article-note">${artigo.observacao}</div>` : ""}
 
-      <label class="check-linha">
+      <label class="article-check">
         <input type="checkbox" class="artigo-checkbox" data-numero="${artigo.numero}" ${marcado ? "checked" : ""}>
         Selecionar artigo
       </label>
@@ -245,7 +253,14 @@ function calcularAgravantes() {
 function calcular() {
   if (!artigosSelecionados.size) {
     resultado.innerHTML = `
-      <div class="alerta alerta-vermelho">Selecione ao menos um artigo para realizar o cálculo.</div>
+      <div class="document-header">
+        <span class="doc-power">PODER JUDICIÁRIO</span>
+        <h3>Resultado do Cálculo Penal</h3>
+        <p>Tribunal de Justiça de Snow</p>
+      </div>
+      <div class="document-body">
+        <div class="document-alert danger">Selecione ao menos um artigo para realizar o cálculo.</div>
+      </div>
     `;
     return;
   }
@@ -277,11 +292,9 @@ function calcular() {
 
   const acrescimo = calcularAgravantes();
   const penaComAgravante = penaBase + acrescimo;
-
   const percentualReducao = obterReducaoAtenuantes();
   const desconto = Math.round(penaComAgravante * percentualReducao);
   const penaFinal = Math.max(0, penaComAgravante - desconto);
-
   const totalComHonorarios = (possuiInafiançavel ? 0 : fiancaTotal) + honorarios;
 
   const listaFormatada = listaArtigos
@@ -289,39 +302,50 @@ function calcular() {
     .join("<br>");
 
   resultado.innerHTML = `
-    <h3>Resultado do Cálculo</h3>
-
-    ${
-      possuiInafiançavel
-        ? `<div class="alerta alerta-vermelho">⚠️ Consta crime inafiançável entre os artigos selecionados.</div>`
-        : `<div class="alerta alerta-verde">✅ Não há crime inafiançável entre os artigos selecionados.</div>`
-    }
-
-    <div class="resultado-grid">
-      <div class="resultado-card">
-        <p><strong>Pena base:</strong> ${penaBase} meses</p>
-        <p><strong>Agravantes aplicadas:</strong> ${acrescimo} meses</p>
-        <p><strong>Pena antes das atenuantes:</strong> ${penaComAgravante} meses</p>
-        <p><strong>Redução total:</strong> ${Math.round(percentualReducao * 100)}%</p>
-        <p><strong>Desconto em meses:</strong> ${desconto} meses</p>
-        <p><strong>Pena final:</strong> ${penaFinal} meses</p>
-      </div>
-
-      <div class="resultado-card">
-        <p><strong>Multa total:</strong> R$ ${formatarMoeda(multaTotal)}</p>
-        <p><strong>Fiança:</strong> ${possuiInafiançavel ? "INAFIANÇÁVEL" : `R$ ${formatarMoeda(fiancaTotal)}`}</p>
-        <p><strong>Honorários jurídicos:</strong> R$ ${formatarMoeda(honorarios)}</p>
-        <p><strong>Total com honorários:</strong> ${
-          possuiInafiançavel
-            ? `R$ ${formatarMoeda(honorarios)}`
-            : `R$ ${formatarMoeda(totalComHonorarios)}`
-        }</p>
-      </div>
+    <div class="document-header">
+      <span class="doc-power">PODER JUDICIÁRIO</span>
+      <h3>Resultado do Cálculo Penal</h3>
+      <p>Tribunal de Justiça de Snow — Documento preliminar de apuração</p>
     </div>
 
-    <div class="lista-final">
-      <p><strong>Artigos selecionados:</strong></p>
-      <p>${listaFormatada}</p>
+    <div class="document-body">
+      ${
+        possuiInafiançavel
+          ? `<div class="document-alert danger">Consta crime inafiançável entre os artigos selecionados.</div>`
+          : `<div class="document-alert success">Não há crime inafiançável entre os artigos selecionados.</div>`
+      }
+
+      <section class="document-section">
+        <h4>Dosimetria preliminar</h4>
+        <div class="document-grid">
+          <div class="document-card">
+            <p><strong>Pena base:</strong> ${penaBase} meses</p>
+            <p><strong>Agravantes aplicadas:</strong> ${acrescimo} meses</p>
+            <p><strong>Pena antes das atenuantes:</strong> ${penaComAgravante} meses</p>
+            <p><strong>Redução total:</strong> ${Math.round(percentualReducao * 100)}%</p>
+            <p><strong>Desconto em meses:</strong> ${desconto} meses</p>
+            <p><strong>Pena final:</strong> ${penaFinal} meses</p>
+          </div>
+
+          <div class="document-card">
+            <p><strong>Multa total:</strong> R$ ${formatarMoeda(multaTotal)}</p>
+            <p><strong>Fiança:</strong> ${possuiInafiançavel ? "INAFIANÇÁVEL" : `R$ ${formatarMoeda(fiancaTotal)}`}</p>
+            <p><strong>Honorários jurídicos:</strong> R$ ${formatarMoeda(honorarios)}</p>
+            <p><strong>Total com honorários:</strong> ${
+              possuiInafiançavel
+                ? `R$ ${formatarMoeda(honorarios)}`
+                : `R$ ${formatarMoeda(totalComHonorarios)}`
+            }</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="document-section">
+        <h4>Artigos considerados</h4>
+        <div class="document-list">
+          <p>${listaFormatada}</p>
+        </div>
+      </section>
     </div>
   `;
 }
@@ -337,8 +361,8 @@ function limparCalculo() {
   colaboracaoPercent.value = "";
   artigosContainer.innerHTML = "";
   artigosContainer.style.display = "none";
-  resultado.innerHTML = "";
   atualizarResumoSelecionados();
+  renderEstadoInicialResultado();
 }
 
 searchButton.addEventListener("click", pesquisarArtigos);
@@ -366,3 +390,4 @@ colaboracaoCheck.addEventListener("change", () => {
 });
 
 atualizarResumoSelecionados();
+renderEstadoInicialResultado();
