@@ -2,152 +2,126 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Calculadora TJ Snow</title>
+  <title>Calculadora Penal TJ Snow</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Calculadora Penal Oficial do Tribunal da Cidade de Snow">
+  <meta name="description" content="Calculadora Penal Oficial do Tribunal de Justiça de Snow">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="watermark"></div>
 
-  <header class="header-oficial">
-    <div class="faixas-topo">
-      <div class="faixa esquerda"></div>
-      <img src="logo-snow.png" class="brasao-topo" alt="Brasão do Tribunal da Cidade de Snow">
-      <div class="faixa direita"></div>
+  <header class="topo">
+    <div class="topo-linha"></div>
+
+    <div class="topo-conteudo">
+      <img src="logo-snow.png" alt="Logo Oficial Tribunal de Justiça de Snow" class="logo-topo">
+
+      <div class="titulos">
+        <p class="pre-titulo">PODER JUDICIÁRIO</p>
+        <h1>TRIBUNAL DE JUSTIÇA DE SNOW</h1>
+        <h2>Calculadora Penal Oficial</h2>
+        <span class="subinfo">1ª Vara Cível e Criminal</span>
+      </div>
     </div>
 
-    <h1>CALCULADORA TRIBUNAL DE JUSTIÇA DE SNOW</h1>
-    <h2>1ª VARA CÍVEL E CRIMINAL</h2>
+    <div class="topo-linha"></div>
   </header>
 
-  <main class="container">
-    <section class="intro-box">
-      <p>
-        Ferramenta oficial para cálculo preliminar de pena, multa, fiança e honorários jurídicos,
-        conforme o Código Penal vigente da Cidade de Snow.
-      </p>
+  <main class="pagina">
+    <section class="hero">
+      <div class="hero-texto">
+        <h3>Cálculo preliminar de pena, multa e fiança</h3>
+        <p>
+          Sistema interno para apoio à análise penal, com base no Código Penal vigente da Cidade de Snow.
+        </p>
+      </div>
     </section>
 
-    <section class="search-section">
-      <div class="search-box">
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Digite o número ou nome do artigo"
-          autocomplete="off"
-        >
-        <button id="searchButton" type="button">🔍 Pesquisar</button>
+    <section class="bloco-principal">
+      <div class="busca-box">
+        <label for="searchInput" class="label-titulo">Pesquisa de artigos</label>
+
+        <div class="busca-linha">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Digite o número, nome ou palavra do artigo"
+            autocomplete="off"
+          >
+          <button id="searchButton" type="button">Pesquisar</button>
+        </div>
+
+        <div class="acoes-busca">
+          <button id="showAllButton" type="button" class="btn-secundario">Exibir todos os artigos</button>
+          <button id="clearSearchButton" type="button" class="btn-secundario claro">Limpar busca</button>
+        </div>
       </div>
 
-      <div class="search-actions">
-        <button id="showAllButton" type="button" class="mini-btn">Mostrar todos os artigos</button>
-        <button id="clearSearchButton" type="button" class="mini-btn mini-btn-light">Limpar busca</button>
-      </div>
-
-      <div id="artigosContainer" class="artigos-grid" style="display:none;"></div>
+      <div id="artigosContainer" class="artigos-container" style="display:none;"></div>
     </section>
 
-    <section class="panel-grid">
-      <div class="panel">
-        <h3>Redução de Pena (Atenuantes)</h3>
+    <section class="grid-paineis">
+      <div class="painel">
+        <h3>Atenuantes</h3>
 
-        <div class="bloco">
-          <label>
-            <input type="checkbox" class="atenuante" data-percent="0.20">
-            Presença de advogado (−20%)
-          </label>
+        <div class="grupo-check">
+          <label><input type="checkbox" class="atenuante" data-percent="0.20"> Presença de advogado (−20%)</label>
+          <label><input type="checkbox" class="atenuante" data-percent="0.10"> Confissão do crime (−10%)</label>
+          <label><input type="checkbox" class="atenuante" data-percent="0.10"> Bom comportamento durante a abordagem (−10%)</label>
 
-          <label>
-            <input type="checkbox" class="atenuante" data-percent="0.10">
-            Confissão do crime (−10%)
-          </label>
+          <label><input type="checkbox" id="colaboracaoCheck"> Colaboração com a investigação</label>
 
-          <label>
-            <input type="checkbox" class="atenuante" data-percent="0.10">
-            Bom comportamento durante a abordagem (−10%)
-          </label>
-
-          <label class="colaboracao-linha">
-            <input type="checkbox" id="colaboracaoCheck">
-            Colaboração com a investigação
-          </label>
-
-          <div class="colaboracao-box">
-            <label for="colaboracaoPercent" class="small-label">Percentual definido pela autoridade:</label>
-            <input
-              id="colaboracaoPercent"
-              type="number"
-              min="0"
-              max="100"
-              step="1"
-              placeholder="Ex: 15"
-            >
+          <div class="campo-recuado">
+            <label for="colaboracaoPercent" class="mini-label">Percentual definido pela autoridade</label>
+            <input id="colaboracaoPercent" type="number" min="0" max="100" step="1" placeholder="Ex.: 15">
           </div>
         </div>
       </div>
 
-      <div class="panel">
-        <h3>Majoração / Circunstâncias</h3>
+      <div class="painel">
+        <h3>Agravante automática</h3>
 
-        <div class="bloco">
+        <div class="grupo-check">
           <label>
             <input type="checkbox" id="agravanteServidor">
             Aplicar agravante por crime contra servidor público quando cabível
           </label>
         </div>
 
-        <div class="info-box">
-          <p><strong>Regras automáticas:</strong></p>
-          <p>• Agravante de +10%: Arts. 1 e 2</p>
-          <p>• Agravante de +5%: Art. 4</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="panel-grid">
-      <div class="panel">
-        <h3>Atendimentos Jurídicos</h3>
-
-        <div class="bloco">
-          <label>
-            <input type="checkbox" class="honorario" data-valor="20000">
-            Delegacia Sul — R$ 20.000
-          </label>
-
-          <label>
-            <input type="checkbox" class="honorario" data-valor="30000">
-            Delegacia PRF — R$ 30.000
-          </label>
+        <div class="aviso-info">
+          <strong>Regras cadastradas:</strong><br>
+          Art. 1 e Art. 2: +10%<br>
+          Art. 4: +5%
         </div>
       </div>
 
-      <div class="panel">
-        <h3>Artigos Selecionados</h3>
-        <div id="selecionadosResumo" class="selecionados-resumo">
-          Nenhum artigo selecionado.
+      <div class="painel">
+        <h3>Atendimentos jurídicos</h3>
+
+        <div class="grupo-check">
+          <label><input type="checkbox" class="honorario" data-valor="20000"> Delegacia Sul — R$ 20.000</label>
+          <label><input type="checkbox" class="honorario" data-valor="30000"> Delegacia PRF — R$ 30.000</label>
         </div>
+      </div>
+
+      <div class="painel">
+        <h3>Artigos selecionados</h3>
+        <div id="selecionadosResumo" class="resumo-selecao">Nenhum artigo selecionado.</div>
       </div>
     </section>
 
-    <section class="action-buttons">
-      <button class="calculate-btn" type="button" onclick="calcular()">Calcular Pena</button>
-      <button class="calculate-btn secondary" type="button" onclick="limparCalculo()">Limpar Cálculo</button>
+    <section class="acoes-principais">
+      <button class="btn-primario" type="button" onclick="calcular()">Calcular Pena</button>
+      <button class="btn-secundario full" type="button" onclick="limparCalculo()">Limpar Cálculo</button>
     </section>
 
-    <section id="resultado" class="result"></section>
+    <section id="resultado" class="resultado"></section>
   </main>
 
-  <footer class="footer-oficial">
-    <div class="faixas-rodape"></div>
-
-    <div class="texto-footer">
-      Documento Oficial – Tribunal de Justiça de Snow<br>
-      <span class="footer-credit">Calculadora desenvolvida por Hinara Heloar</span>
-    </div>
-
-    <div class="faixas-rodape"></div>
+  <footer class="rodape">
+    <div class="rodape-linha"></div>
+    <p>Documento Oficial – Tribunal de Justiça de Snow</p>
+    <span>Calculadora desenvolvida por Hinara Heloar</span>
   </footer>
 
   <script src="script.js"></script>
