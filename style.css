@@ -542,6 +542,137 @@ input[type="checkbox"] {
   font-weight: 600;
 }
 
+/* ===================== RESULTADO MELHORADO ===================== */
+
+.result-status {
+  margin-bottom: 18px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 28px var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.result-status-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.result-status-value {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 30px;
+  line-height: 1.05;
+}
+
+.status-fianca {
+  background: linear-gradient(180deg, rgba(223, 242, 255, 0.72), rgba(248, 252, 255, 0.96));
+  border-color: rgba(21, 146, 240, 0.16);
+  color: var(--ink);
+}
+
+.status-inafiançavel {
+  background: linear-gradient(180deg, rgba(158, 47, 47, 0.14), rgba(158, 47, 47, 0.26));
+  border: 2px solid rgba(158, 47, 47, 0.55);
+  color: #871c1c;
+  box-shadow:
+    0 0 0 4px rgba(158, 47, 47, 0.08),
+    0 18px 34px rgba(158, 47, 47, 0.16);
+}
+
+.result-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.result-card-box {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 18px 16px;
+  box-shadow: 0 10px 22px var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.result-card-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.result-card-value {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 28px;
+  line-height: 1.05;
+  color: var(--ink);
+}
+
+.result-card-final {
+  background: linear-gradient(180deg, rgba(21, 146, 240, 0.10), rgba(77, 184, 255, 0.10));
+  border-color: rgba(21, 146, 240, 0.18);
+}
+
+.result-values-panel {
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 10px 22px var(--shadow-soft);
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.result-value-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.result-value-row:last-child {
+  border-bottom: none;
+}
+
+.result-value-row span {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.result-value-row strong {
+  font-family: "Times New Roman", Georgia, serif;
+  font-size: 22px;
+  color: var(--ink);
+}
+
+.result-value-row-danger {
+  background: rgba(158, 47, 47, 0.10);
+}
+
+.result-value-row-danger span,
+.result-value-row-danger strong {
+  color: #8d1f1f;
+}
+
+.result-value-row-total {
+  background: rgba(77, 184, 255, 0.08);
+}
+
+.result-value-row-total strong {
+  font-size: 24px;
+}
+
 @media (max-width: 1080px) {
   .main-grid {
     grid-template-columns: 1fr;
@@ -597,8 +728,22 @@ input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 
+  .result-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
   .article-top {
     flex-direction: column;
+  }
+
+  .result-status-value,
+  .result-card-value {
+    font-size: 24px;
+  }
+
+  .result-value-row {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .soft-panel,
