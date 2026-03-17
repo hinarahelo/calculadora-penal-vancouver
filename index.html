@@ -56,19 +56,29 @@
 
       <aside class="right-column">
         <section class="panel side-panel">
-          <span class="section-kicker">ATENUANTES</span>
-          <h3>Redução de pena</h3>
+          <span class="section-kicker">🔻 REDUÇÕES DE PENA</span>
+          <h3>Redução aplicada</h3>
 
           <div class="check-group">
-            <label><input type="checkbox" class="atenuante" data-percent="0.20"> Presença de advogado (−20%)</label>
-            <label><input type="checkbox" class="atenuante" data-percent="0.10"> Confissão do crime (−10%)</label>
-            <label><input type="checkbox" class="atenuante" data-percent="0.10"> Bom comportamento durante a abordagem (−10%)</label>
-            <label><input type="checkbox" id="colaboracaoCheck"> Colaboração com a investigação</label>
+            <label><input type="checkbox" id="reducaoBomComportamento" class="reducao-check" data-percent="0.05"> Bom comportamento (até 5%)</label>
+            <label><input type="checkbox" id="reducaoReuPrimario" class="reducao-check" data-percent="0.20"> Réu primário (20%)</label>
+            <label><input type="checkbox" id="reducaoCumplice"> Cúmplice</label>
           </div>
 
           <div class="inline-field">
-            <label for="colaboracaoPercent">Percentual definido pela autoridade</label>
-            <input id="colaboracaoPercent" type="number" min="0" max="100" step="1" placeholder="Ex: 15">
+            <label for="cumplicePercent">Percentual definido pela autoridade (até 25%)</label>
+            <input id="cumplicePercent" type="number" min="0" max="25" step="1" placeholder="Ex: 15">
+          </div>
+
+          <div class="note-box">
+            <strong>Regras aplicáveis</strong>
+            <p>A redução poderá variar entre 5% e 50%, conforme o caso concreto.</p>
+            <p>✔ Em determinadas circunstâncias, a pena aplicada poderá ser reduzida.</p>
+            <p>✔ A pena poderá ser anulada juntamente com a multa, quando houver previsão legal aplicável.</p>
+            <p>✔ Bom comportamento: redução de até 5%, desde que haja presença de advogado.</p>
+            <p>✔ Réu primário: redução de 20% da pena aplicada.</p>
+            <p>✔ Cúmplice: redução de até 25%, conforme avaliação da autoridade competente.</p>
+            <p><strong>Limite máximo de redução: 50%.</strong></p>
           </div>
         </section>
 
