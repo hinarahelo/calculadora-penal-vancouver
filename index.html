@@ -2,136 +2,100 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Calculadora Penal TJ Snow</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Calculadora Penal Oficial do Tribunal de Justiça de Snow">
+  <title>Calculadora Penal - Snow</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="watermark"></div>
 
-  <header class="topbar">
-    <div class="topbar-line"></div>
-    <div class="topbar-inner">
-      <img src="logo-snow.png" alt="Logo Oficial do Tribunal de Justiça de Snow" class="topbar-logo">
+<header class="header">
+  <h1>Tribunal da Cidade de Snow</h1>
+  <p>Calculadora Penal</p>
+</header>
 
-      <div class="topbar-text">
-        <span class="eyebrow">PODER JUDICIÁRIO</span>
-        <h1>TRIBUNAL DE JUSTIÇA DE SNOW</h1>
-        <p>Calculadora Penal Oficial</p>
-      </div>
+<main class="container">
+
+  <!-- BUSCA -->
+  <section class="panel">
+    <h3>Busca de artigos</h3>
+
+    <input type="text" id="searchInput" placeholder="Digite o nome ou número do artigo">
+
+    <div class="buttons">
+      <button id="searchButton">Buscar</button>
+      <button id="showAllButton">Mostrar todos</button>
+      <button id="clearSearchButton">Limpar</button>
     </div>
-    <div class="topbar-line"></div>
-  </header>
 
-  <main class="app-shell">
-    <section class="main-grid">
-      <div class="left-column">
-        <section class="panel soft-panel">
-          <div class="panel-header">
-            <div>
-              <span class="section-kicker">CONSULTA</span>
-              <h3>Pesquisa de artigos</h3>
-            </div>
-          </div>
+    <div id="artigosContainer"></div>
+  </section>
 
-          <div class="search-row">
-            <input
-              id="searchInput"
-              type="text"
-              placeholder="Digite o número, nome ou termo do artigo"
-              autocomplete="off"
-            >
-            <button id="searchButton" type="button" class="btn-primary">Pesquisar</button>
-          </div>
+  <!-- SELECIONADOS -->
+  <section class="panel">
+    <h3>Artigos selecionados</h3>
+    <div id="selecionadosResumo">Nenhum artigo selecionado.</div>
+  </section>
 
-          <div class="search-actions">
-            <button id="showAllButton" type="button" class="btn-secondary">Exibir todos os artigos</button>
-            <button id="clearSearchButton" type="button" class="btn-ghost">Limpar busca</button>
-          </div>
+  <!-- REDUÇÕES -->
+  <section class="panel side-panel">
+    <span class="section-kicker">REDUÇÕES DE PENA</span>
+    <h3>Redução aplicada</h3>
 
-          <div id="artigosContainer" class="articles-list" style="display:none;"></div>
-        </section>
-      </div>
+    <div class="check-group">
+      <label>
+        <input type="checkbox" id="reducaoBomComportamento">
+        Bom comportamento — redução de até 5% da pena
+      </label>
 
-      <aside class="right-column">
-        <section class="panel side-panel">
-          <span class="section-kicker">🔻 REDUÇÕES DE PENA</span>
-          <h3>Redução aplicada</h3>
+      <label>
+        <input type="checkbox" id="reducaoReuPrimario">
+        Réu primário — redução de 20% da pena aplicada
+      </label>
 
-          <div class="check-group">
-            <label><input type="checkbox" id="reducaoBomComportamento" class="reducao-check" data-percent="0.05"> Bom comportamento (até 5%)</label>
-            <label><input type="checkbox" id="reducaoReuPrimario" class="reducao-check" data-percent="0.20"> Réu primário (20%)</label>
-            <label><input type="checkbox" id="reducaoCumplice"> Cúmplice</label>
-          </div>
+      <label>
+        <input type="checkbox" id="reducaoCumplice">
+        Cúmplice — redução de até 25% da pena
+      </label>
+    </div>
 
-          <div class="inline-field">
-            <label for="cumplicePercent">Percentual definido pela autoridade (até 25%)</label>
-            <input id="cumplicePercent" type="number" min="0" max="25" step="1" placeholder="Ex: 15">
-          </div>
+    <div class="inline-field">
+      <label for="cumplicePercent">Percentual do cúmplice (até 25%)</label>
+      <input id="cumplicePercent" type="number" min="0" max="25" step="1" placeholder="Ex: 15">
+    </div>
+  </section>
 
-          <div class="note-box">
-            <strong>Regras aplicáveis</strong>
-            <p>A redução poderá variar entre 5% e 50%, conforme o caso concreto.</p>
-            <p>✔ Em determinadas circunstâncias, a pena aplicada poderá ser reduzida.</p>
-            <p>✔ A pena poderá ser anulada juntamente com a multa, quando houver previsão legal aplicável.</p>
-            <p>✔ Bom comportamento: redução de até 5%, desde que haja presença de advogado.</p>
-            <p>✔ Réu primário: redução de 20% da pena aplicada.</p>
-            <p>✔ Cúmplice: redução de até 25%, conforme avaliação da autoridade competente.</p>
-            <p><strong>Limite máximo de redução: 50%.</strong></p>
-          </div>
-        </section>
+  <!-- AGRAVANTES -->
+  <section class="panel side-panel">
+    <h3>Agravantes</h3>
 
-        <section class="panel side-panel">
-          <span class="section-kicker">AGRAVANTES</span>
-          <h3>Majoração automática</h3>
+    <label>
+      <input type="checkbox" id="agravanteServidor">
+      Crime contra servidor público
+    </label>
+  </section>
 
-          <div class="check-group">
-            <label>
-              <input type="checkbox" id="agravanteServidor">
-              Aplicar agravante por crime contra servidor público quando cabível
-            </label>
-          </div>
+  <!-- HONORÁRIOS -->
+  <section class="panel side-panel">
+    <h3>Honorários</h3>
 
-          <div class="note-box">
-            <strong>Regras cadastradas</strong>
-            <p>Art. 1 e Art. 2: +10%</p>
-            <p>Art. 4: +5%</p>
-          </div>
-        </section>
+    <label><input type="checkbox" class="honorario" data-valor="5000"> Advogado particular — R$ 5.000</label>
+    <label><input type="checkbox" class="honorario" data-valor="10000"> Advogado premium — R$ 10.000</label>
+  </section>
 
-        <section class="panel side-panel">
-          <span class="section-kicker">JURÍDICO</span>
-          <h3>Atendimentos</h3>
+  <!-- AÇÕES -->
+  <section class="panel actions">
+    <button onclick="calcular()">Calcular</button>
+    <button onclick="limparCalculo()">Limpar</button>
+  </section>
 
-          <div class="check-group">
-            <label><input type="checkbox" class="honorario" data-valor="20000"> Delegacia Sul — R$ 20.000</label>
-            <label><input type="checkbox" class="honorario" data-valor="30000"> Delegacia PRF — R$ 30.000</label>
-          </div>
-        </section>
+  <!-- RESULTADO -->
+  <section class="panel result">
+    <div id="resultado"></div>
+  </section>
 
-        <section class="panel side-panel">
-          <span class="section-kicker">SELEÇÃO</span>
-          <h3>Artigos selecionados</h3>
-          <div id="selecionadosResumo" class="selection-summary">Nenhum artigo selecionado.</div>
-        </section>
+</main>
 
-        <section class="panel action-panel">
-          <button class="btn-primary btn-full" type="button" onclick="calcular()">Calcular Pena</button>
-          <button class="btn-secondary btn-full" type="button" onclick="limparCalculo()">Limpar Cálculo</button>
-        </section>
-      </aside>
-    </section>
+<script src="script.js"></script>
 
-    <section id="resultado" class="judicial-document"></section>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-line"></div>
-    <p>Documento Oficial – Tribunal de Justiça de Snow</p>
-    <span>Calculadora desenvolvida por Hinara Heloar</span>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
