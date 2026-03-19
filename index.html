@@ -26,6 +26,7 @@
 
   <main class="app-shell">
     <section class="main-grid">
+
       <div class="left-column">
         <section class="panel soft-panel">
           <div class="panel-header">
@@ -37,12 +38,12 @@
 
           <div class="search-row">
             <input id="searchInput" type="text" placeholder="Digite o número, nome ou termo do artigo">
-            <button id="searchButton" type="button" class="btn-primary">Pesquisar</button>
+            <button id="searchButton" class="btn-primary">Pesquisar</button>
           </div>
 
           <div class="search-actions">
-            <button id="showAllButton" type="button" class="btn-secondary">Exibir todos os artigos</button>
-            <button id="clearSearchButton" type="button" class="btn-ghost">Limpar busca</button>
+            <button id="showAllButton" class="btn-secondary">Exibir todos os artigos</button>
+            <button id="clearSearchButton" class="btn-ghost">Limpar busca</button>
           </div>
 
           <div id="artigosContainer" class="articles-list" style="display: none;"></div>
@@ -60,22 +61,22 @@
 
             <label>
               <input type="checkbox" id="reducaoBomComportamento">
-              <strong> Bom comportamento</strong> — redução de <strong class="percent-green">5%</strong> da pena
+              <strong> BOM COMPORTAMENTO</strong> — redução de <strong class="percent-green">5%</strong>
             </label>
 
             <label>
               <input type="checkbox" id="reducaoReuPrimario">
-              <strong> Réu primário</strong> — redução de <strong class="percent-green">10%</strong> da pena
+              <strong> RÉU PRIMÁRIO</strong> — redução de <strong class="percent-green">10%</strong>
             </label>
 
             <label>
               <input type="checkbox" id="reducaoAdvogadoConstituido">
-              <strong> Advogado constituído</strong> — redução de <strong class="percent-green">20%</strong> da pena
+              <strong> ADVOGADO CONSTITUÍDO</strong> — redução de <strong class="percent-green">20%</strong>
             </label>
 
             <label>
               <input type="checkbox" id="reducaoCumplice">
-              <strong> Cúmplice</strong> — redução de <strong class="percent-green">15%</strong> da pena
+              <strong> CÚMPLICEe</strong> — redução de <strong class="percent-green">15%</strong>
             </label>
 
           </div>
@@ -110,8 +111,8 @@
 
         <!-- ⚙️ AÇÕES -->
         <section class="panel action-panel">
-          <button class="btn-primary btn-full" type="button" onclick="calcular()">Calcular Pena</button>
-          <button class="btn-secondary btn-full" type="button" onclick="limparCalculo()">Limpar Cálculo</button>
+          <button class="btn-primary btn-full" onclick="calcular()">Calcular Pena</button>
+          <button class="btn-secondary btn-full" onclick="limparCalculo()">Limpar Cálculo</button>
         </section>
 
       </aside>
