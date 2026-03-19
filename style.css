@@ -18,6 +18,7 @@
   --blue-strong: #1592f0;
   --blue-soft: #dff2ff;
   --blue-soft-2: #edf8ff;
+  --green-strong: #24a148;
 }
 
 * {
@@ -407,6 +408,11 @@ input[type="checkbox"] {
   font-size: 14px;
   line-height: 1.75;
   color: var(--ink-soft);
+}
+
+.percent-green {
+  color: var(--green-strong);
+  font-weight: 800;
 }
 
 .judicial-document {
