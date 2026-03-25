@@ -95,7 +95,25 @@ const artigos = [
     fianca: 0
   },
   {
+    numero: 9,
+    categoria: "Materiais Ilícitos",
+    nome: "Posse de Materiais Ilegais",
+    descricao: "Portar lockpick, C4, chipe hacker, masterpick, utilizados para práticas ilegais, devendo o indivíduo possuir abaixo de 10 itens ilegais no bolso na hora da apreensão.",
+    pena: 0,
+    multa: 3000,
+    fianca: 0
+  },
+  {
     numero: 10,
+    categoria: "Trânsito",
+    nome: "Veículo Danificado",
+    descricao: "Trafegar com o veículo irregular e fora de situação segura em via pública.",
+    pena: 0,
+    multa: 3000,
+    fianca: 0
+  },
+  {
+    numero: 11,
     categoria: "Crimes contra a Vida",
     nome: "Atropelamento Culposo",
     descricao: "Atropelar uma pessoa com veículo automotor sem intenção de causar dano ou morte.",
@@ -104,7 +122,7 @@ const artigos = [
     fianca: 3000
   },
   {
-    numero: 11,
+    numero: 12,
     categoria: "Crimes contra a Vida",
     nome: "Atropelamento Doloso",
     descricao: "Atropelar uma pessoa com intenção de causar dano grave ou morte utilizando veículo automotor.",
@@ -113,7 +131,7 @@ const artigos = [
     fianca: 5000
   },
   {
-    numero: 12,
+    numero: 13,
     categoria: "Crimes contra a Vida",
     nome: "Atropelamento Coletivo",
     descricao: "Atropelar quatro ou mais pessoas em um mesmo evento, ainda que sem intenção direta.",
@@ -122,7 +140,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 13,
+    numero: 14,
     categoria: "Crimes contra a Vida",
     nome: "Homicídio Culposo",
     descricao: "Causar a morte de alguém sem intenção de matar.",
@@ -131,7 +149,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 14,
+    numero: 15,
     categoria: "Crimes contra a Vida",
     nome: "Homicídio Doloso",
     descricao: "Causar a morte de alguém com intenção de matar.",
@@ -140,7 +158,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 15,
+    numero: 16,
     categoria: "Crimes contra a Vida",
     nome: "Homicídio de Servidor Público",
     descricao: "Causar a morte de servidor público em exercício da função, como policiais, médicos ou autoridades.",
@@ -149,7 +167,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 16,
+    numero: 17,
     categoria: "Crimes contra a Vida",
     nome: "Genocídio",
     descricao: "Extermínio deliberado de quatro ou mais pessoas.",
@@ -158,7 +176,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 17,
+    numero: 18,
     categoria: "Crimes contra a Vida",
     nome: "Latrocínio",
     descricao: "Praticar roubo ou assalto que resulte na morte da vítima.",
@@ -167,7 +185,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 18,
+    numero: 19,
     categoria: "Crimes contra a Vida",
     nome: "Lesão Corporal",
     descricao: "Agredir alguém causando dano físico ou à saúde.",
@@ -176,7 +194,7 @@ const artigos = [
     fianca: 3750
   },
   {
-    numero: 19,
+    numero: 20,
     categoria: "Crimes contra a Vida",
     nome: "Terrorismo",
     descricao: "Praticar atos violentos com objetivo de intimidar ou causar terror coletivo.",
@@ -185,7 +203,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 20,
+    numero: 21,
     categoria: "Crimes contra a Liberdade",
     nome: "Sequestro",
     descricao: "Privar alguém de sua liberdade mantendo a vítima em cativeiro contra sua vontade.",
@@ -194,7 +212,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 21,
+    numero: 22,
     categoria: "Crimes contra a Vida",
     nome: "Omissão de Socorro",
     descricao: "Deixar de prestar assistência a pessoa em perigo quando possível fazê-lo sem risco.",
@@ -203,7 +221,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 22,
+    numero: 23,
     categoria: "Crimes contra a Vida",
     nome: "Maus-Tratos",
     descricao: "Colocar em risco a vida ou saúde de pessoa sob responsabilidade do agente.",
@@ -212,7 +230,7 @@ const artigos = [
     fianca: 8000
   },
   {
-    numero: 23,
+    numero: 24,
     categoria: "Crimes contra a Liberdade",
     nome: "Abandono de Incapaz",
     descricao: "Abandonar pessoa incapaz sob responsabilidade legal colocando-a em risco.",
@@ -221,7 +239,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 24,
+    numero: 25,
     categoria: "Crimes contra a Liberdade",
     nome: "Ameaça",
     descricao: "Ameaçar causar mal grave a alguém por palavras ou gestos.",
@@ -230,7 +248,7 @@ const artigos = [
     fianca: 3750
   },
   {
-    numero: 25,
+    numero: 26,
     categoria: "Crimes contra a Liberdade",
     nome: "Atentado ao Pudor",
     descricao: "Constranger alguém mediante violência ou ameaça para ato de natureza sexual.",
@@ -239,7 +257,7 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 26,
+    numero: 27,
     categoria: "Crimes contra a Liberdade",
     nome: "Stalking",
     descricao: "Perseguir alguém de forma insistente ameaçando sua integridade ou privacidade.",
@@ -248,52 +266,56 @@ const artigos = [
     fianca: null
   },
   {
-    numero: 27,
-    categoria: "Honra",
-    nome: "Difamação",
-    descricao: "Atribuir fato ofensivo que prejudique a reputação de alguém.",
-    pena: 20,
-    multa: 2500,
-    fianca: 3000
-  },
-  {
     numero: 28,
     categoria: "Honra",
-    nome: "Injúria",
-    descricao: "Ofender a dignidade ou o decoro de outra pessoa.",
+    nome: "Difamação",
+    descricao: "Atribuir a alguém fato ofensivo à sua reputação, de forma a prejudicar sua imagem perante terceiros, por meio de qualquer forma de comunicação.",
     pena: 20,
     multa: 2500,
-    fianca: 3700
+    fianca: 3000,
+    observacao: "Ex.: postar em redes fatos ofensivos que prejudiquem a reputação de alguém."
   },
   {
     numero: 29,
     categoria: "Honra",
-    nome: "Calúnia",
-    descricao: "Acusar falsamente alguém da prática de crime.",
+    nome: "Injúria",
+    descricao: "Ofender a dignidade ou o decoro de outra pessoa por meio de palavras, gestos ou qualquer forma de expressão, atingindo sua honra subjetiva, ainda que sem imputação de fato específico.",
     pena: 20,
-    multa: 3500,
-    fianca: 4500
+    multa: 2500,
+    fianca: 3700,
+    observacao: "Ex.: ofender a dignidade ou o decoro de outra pessoa."
   },
   {
     numero: 30,
     categoria: "Honra",
-    nome: "Uso Indevido de Imagem",
-    descricao: "Utilizar imagem de terceiros sem autorização, salvo em investigações policiais.",
-    pena: 35,
+    nome: "Calúnia",
+    descricao: "Imputar falsamente a alguém a prática de fato definido como crime, com o objetivo de prejudicar sua honra ou imagem, sabendo ou devendo saber da falsidade da acusação.",
+    pena: 20,
     multa: 3500,
-    fianca: 3800
+    fianca: 4500,
+    observacao: "Ex.: acusar falsamente alguém da prática de crime."
   },
   {
     numero: 31,
+    categoria: "Honra",
+    nome: "Uso Indevido de Imagem",
+    descricao: "Utilizar, divulgar ou compartilhar imagem, vídeo ou qualquer representação de terceiros sem autorização, de forma a expor, prejudicar ou obter vantagem indevida, salvo quando destinado a fins legais, como investigações policiais ou judiciais.",
+    pena: 35,
+    multa: 3500,
+    fianca: 3800,
+    observacao: "Ex.: utilizar imagem de terceiros sem autorização, salvo em investigações policiais."
+  },
+  {
+    numero: 32,
     categoria: "Drogas",
     nome: "Posse de Drogas",
-    descricao: "Portar quantidade inferior a 10 unidades de drogas.",
+    descricao: "Portar menos de 10 unidades de drogas.",
     pena: 10,
     multa: 1500,
     fianca: 2000
   },
   {
-    numero: 32,
+    numero: 33,
     categoria: "Drogas",
     nome: "Tráfico de Drogas",
     descricao: "Comercializar, transportar ou portar 10 ou mais unidades de drogas.",
@@ -302,7 +324,7 @@ const artigos = [
     fianca: 3000
   },
   {
-    numero: 33,
+    numero: 34,
     categoria: "Armas",
     nome: "Porte Ilegal de Arma (Baixo Calibre)",
     descricao: "Portar arma leve sem autorização legal.",
@@ -311,7 +333,7 @@ const artigos = [
     fianca: 3000
   },
   {
-    numero: 34,
+    numero: 35,
     categoria: "Armas",
     nome: "Porte Ilegal de Arma (Médio Calibre)",
     descricao: "Portar submetralhadora ou arma equivalente sem autorização.",
@@ -320,7 +342,7 @@ const artigos = [
     fianca: 6500
   },
   {
-    numero: 35,
+    numero: 36,
     categoria: "Armas",
     nome: "Porte Ilegal de Arma (Alto Calibre)",
     descricao: "Portar armamento de alto calibre ou militar sem autorização.",
@@ -329,88 +351,89 @@ const artigos = [
     fianca: 7800
   },
   {
-    numero: 36,
+    numero: 37,
     categoria: "Armas",
     nome: "Tráfico de Armas Leves",
-    descricao: "Comercializar ou transportar duas ou mais armas leves.",
+    descricao: "Comercializar ou transportar 2 (duas) ou mais armas leves.",
     pena: 20,
     multa: 5000,
     fianca: 5500
   },
   {
-    numero: 37,
+    numero: 38,
     categoria: "Armas",
     nome: "Tráfico de Armas Médias",
-    descricao: "Comercializar ou transportar duas ou mais armas de médio calibre.",
+    descricao: "Comercializar ou transportar 2 (duas) ou mais armas de médio calibre.",
     pena: 30,
     multa: 7500,
     fianca: 7800
   },
   {
-    numero: 38,
+    numero: 39,
     categoria: "Armas",
     nome: "Tráfico de Armas de Alto Calibre",
-    descricao: "Comercializar ou transportar duas ou mais armas de alto calibre.",
+    descricao: "Comercializar ou transportar 2 (duas) ou mais armas de alto calibre.",
     pena: 40,
     multa: 9500,
     fianca: 9800
   },
   {
-    numero: 39,
+    numero: 40,
     categoria: "Munições",
     nome: "Tráfico de Munição Leve",
-    descricao: "Comercializar ou transportar até 70 munições leves.",
+    descricao: "Comercializar ou transportar acima de 70 munições leves.",
     pena: 15,
     multa: 3000,
     fianca: 3500
   },
   {
-    numero: 40,
+    numero: 41,
     categoria: "Munições",
     nome: "Tráfico de Munição Média",
-    descricao: "Comercializar ou transportar até 150 munições médias.",
+    descricao: "Comercializar ou transportar acima de 150 munições médias.",
     pena: 20,
     multa: 5500,
     fianca: 5800
   },
   {
-    numero: 41,
+    numero: 42,
     categoria: "Munições",
     nome: "Tráfico de Munição de Alto Calibre",
-    descricao: "Comercializar ou transportar até 200 munições de alto calibre.",
+    descricao: "Comercializar ou transportar acima de 180 munições de alto calibre.",
     pena: 25,
     multa: 7500,
     fianca: 7800
   },
   {
-    numero: 42,
+    numero: 43,
     categoria: "Materiais Ilícitos",
     nome: "Tráfico de Materiais Ilegais",
-    descricao: "Comercializar lockpick, C4 ou materiais ilegais, possuir acima de 10 itens ilegais no bolso na hora da apreensão.",
+    descricao: "Comercializar lockpick, C4, chipe hacker, masterpick, órgãos humanos ou outros materiais utilizados para práticas ilegais, devendo o indivíduo possuir acima de 10 itens ilegais no bolso na hora da apreensão.",
     pena: 10,
     multa: 4000,
     fianca: 4800
   },
   {
-    numero: 43,
+    numero: 44,
     categoria: "Materiais Ilícitos",
     nome: "Posse de Material para Fabricação",
     descricao: "Possuir matéria-prima ou insumos utilizados na fabricação de drogas, armas, munição ou explosivos.",
     pena: 10,
     multa: 1500,
-    fianca: 2000
+    fianca: 2000,
+    observacao: "Ex.: corpo de rifle, pólvora, projetos de arma e munição, desde que não haja dúvidas da utilização para fabricação de material ilegal."
   },
   {
-    numero: 44,
+    numero: 45,
     categoria: "Ordem Pública",
     nome: "Fuga de Abordagem",
-    descricao: "Desobedecer ordem policial e fugir de abordagem.",
+    descricao: "Desobedecer ordem de parada policial e fugir de abordagem.",
     pena: 15,
     multa: 1500,
     fianca: 2500
   },
   {
-    numero: 45,
+    numero: 46,
     categoria: "Armas",
     nome: "Uso Indevido de Porte de Arma",
     descricao: "Utilizar arma legalizada de forma irresponsável ou ilegal.",
@@ -421,8 +444,8 @@ const artigos = [
   {
     numero: 47,
     categoria: "Patrimônio Ilícito",
-    nome: "Dinheiro Sujo",
-    descricao: "Portar dinheiro marcado ou proveniente de atividade ilícita.",
+    nome: "Posse de Dinheiro Sujo",
+    descricao: "Portar qualquer quantia de dinheiro sujo no momento da apreensão.",
     pena: 10,
     multa: 1500,
     fianca: 2700
@@ -467,7 +490,7 @@ const artigos = [
     numero: 52,
     categoria: "Administração Pública",
     nome: "Abandono de Função",
-    descricao: "Servidor público abandonar seu cargo ou dever funcional.",
+    descricao: "Abandonar, ausentar-se ou deixar de exercer, sem justificativa legal, as atribuições do cargo ou função pública, comprometendo o serviço ou o interesse público.",
     pena: 10,
     multa: 5000,
     fianca: null
@@ -485,16 +508,17 @@ const artigos = [
     numero: 54,
     categoria: "Administração Pública",
     nome: "Abuso de Autoridade",
-    descricao: "Servidor público que excede seus poderes ou usa o cargo de forma ilegal.",
+    descricao: "Exceder os limites das atribuições do cargo ou utilizar a função pública de forma ilegal, arbitrária ou com desvio de finalidade, causando prejuízo, constrangimento ou violação de direitos a terceiros.",
     pena: 50,
     multa: 2500,
-    fianca: 4500
+    fianca: 4500,
+    observacao: "Ex.: servidor público que excede seus poderes ou usa o cargo de forma ilegal."
   },
   {
     numero: 55,
     categoria: "Administração Pública",
     nome: "Fraude de Informações",
-    descricao: "Induzir agente público ao erro por meio de informações falsas.",
+    descricao: "Fornecer, omitir ou manipular informações com o objetivo de induzir agente público ao erro, obter vantagem indevida ou prejudicar investigações e procedimentos legais.",
     pena: 25,
     multa: 3500,
     fianca: 3800
@@ -503,10 +527,11 @@ const artigos = [
     numero: 56,
     categoria: "Administração Pública",
     nome: "Corrupção Passiva",
-    descricao: "Solicitar ou receber vantagem indevida em razão do cargo público.",
+    descricao: "Solicitar, receber ou aceitar promessa de vantagem indevida, direta ou indiretamente, em razão do cargo público, para si ou para terceiro, em troca de favorecimento, omissão ou prática de ato funcional.",
     pena: 50,
     multa: 5500,
-    fianca: 5800
+    fianca: 5800,
+    observacao: "Ex.: solicitar ou receber vantagem indevida em razão do cargo público."
   },
   {
     numero: 57,
@@ -520,7 +545,7 @@ const artigos = [
   {
     numero: 58,
     categoria: "Patrimônio",
-    nome: "Roubo à Registradora",
+    nome: "Furto à Registradora",
     descricao: "Roubar valores de caixas registradoras de estabelecimentos comerciais.",
     pena: 25,
     multa: 2000,
@@ -529,7 +554,7 @@ const artigos = [
   {
     numero: 59,
     categoria: "Patrimônio",
-    nome: "Roubo a Caixa Eletrônico",
+    nome: "Furto a Caixa Eletrônico",
     descricao: "Roubar ou violar caixa eletrônico.",
     pena: 25,
     multa: 2000,
@@ -547,8 +572,8 @@ const artigos = [
   {
     numero: 61,
     categoria: "Patrimônio",
-    nome: "Roubo à Residência",
-    descricao: "Invadir residência para subtrair bens mediante ameaça.",
+    nome: "Furto à Residência",
+    descricao: "Invadir residência para subtrair bens.",
     pena: 25,
     multa: 3000,
     fianca: 4750
@@ -557,10 +582,11 @@ const artigos = [
     numero: 62,
     categoria: "Administração Pública",
     nome: "Invasão ao Departamento Policial",
-    descricao: "Entrar em dependências policiais sem autorização.",
+    descricao: "Acessar, invadir ou permanecer em dependências de unidade policial sem autorização, especialmente mediante uso de violência, grave ameaça ou emprego de armas, comprometendo a segurança do local, de agentes públicos ou de investigações em andamento.",
     pena: 35,
     multa: 25000,
-    fianca: null
+    fianca: null,
+    observacao: "Ex.: entrar em dependências policiais sem autorização."
   },
   {
     numero: 63,
@@ -620,7 +646,7 @@ const artigos = [
     numero: 69,
     categoria: "Patrimônio",
     nome: "Extorsão",
-    descricao: "Obter vantagem mediante ameaça ou violência.",
+    descricao: "Constranger ou obrigar alguém, mediante ameaça, intimidação ou violência, a entregar dinheiro, bens ou qualquer vantagem indevida, realizando a ação por medo ou coação.",
     pena: 30,
     multa: 3000,
     fianca: 4500
@@ -629,7 +655,7 @@ const artigos = [
     numero: 70,
     categoria: "Propriedade",
     nome: "Invasão de Propriedade",
-    descricao: "Entrar em propriedade privada sem autorização do proprietário.",
+    descricao: "Entrar, permanecer ou acessar propriedade privada sem autorização do proprietário, possuidor ou responsável legal, sem justificativa legítima ou amparo legal.",
     pena: 25,
     multa: 1500,
     fianca: 2750
@@ -642,6 +668,127 @@ const artigos = [
     pena: 5,
     multa: 5000,
     fianca: 2300
+  },
+  {
+    numero: 72,
+    categoria: "Patrimônio",
+    nome: "Posse de Materiais de Furto a Residência",
+    descricao: "Possuir, armazenar ou transportar bens provenientes de furto ou roubo em residências, incluindo objetos, móveis ou quaisquer itens adquiridos de forma ilícita.",
+    pena: 15,
+    multa: 3000,
+    fianca: 3500
+  },
+  {
+    numero: 73,
+    categoria: "Ordem Pública",
+    nome: "Apologia ao Crime",
+    descricao: "Incentivar ou apoiar crimes, seja falando, postando ou divulgando fotos, vídeos ou mensagens que mostrem ou estimulem atividades ilegais.",
+    pena: 20,
+    multa: 3000,
+    fianca: 4500
+  },
+  {
+    numero: 74,
+    categoria: "Administração Pública",
+    nome: "Obstrução da Justiça",
+    descricao: "Ocultar, destruir ou alterar provas, bem como dificultar ou interferir em investigações ou processos judiciais, com o objetivo de impedir ou atrasar a atuação da justiça.",
+    pena: 30,
+    multa: 6000,
+    fianca: 8000
+  },
+  {
+    numero: 75,
+    categoria: "Crimes contra a Liberdade",
+    nome: "Violação de Medida Protetiva",
+    descricao: "Descumprir determinação judicial que imponha restrições de contato, aproximação ou convivência com a vítima, colocando em risco sua integridade física ou psicológica.",
+    pena: 20,
+    multa: 5000,
+    fianca: null
+  },
+  {
+    numero: 76,
+    categoria: "Concurso de Pessoas",
+    nome: "Formação de Quadrilha",
+    descricao: "Quando 4 (quatro) ou mais pessoas forem detidas na mesma ocorrência e os envolvidos atuarem juntos, especialmente se estiverem identificados como grupo ou forem detidos no mesmo contexto criminoso.",
+    pena: 30,
+    multa: 3000,
+    fianca: 4000,
+    observacao: "A caracterização do crime permite a abertura de investigação para apuração da participação de cada integrante."
+  },
+  {
+    numero: 77,
+    categoria: "Concurso de Pessoas",
+    nome: "Associação Criminosa",
+    descricao: "Associação a uma organização com fins ilegais com utilização de qualquer tipo de identificação.",
+    pena: 15,
+    multa: 5000,
+    fianca: 6500
+  },
+  {
+    numero: 78,
+    categoria: "Materiais Ilícitos",
+    nome: "Posse de Órgãos",
+    descricao: "Portar, armazenar ou manter em posse membros humanos, abaixo de 10 órgãos, tais como pulmão, fígado ou coração, sem autorização legal.",
+    pena: 10,
+    multa: 5000,
+    fianca: 6500
+  },
+  {
+    numero: 79,
+    categoria: "Materiais Ilícitos",
+    nome: "Tráfico de Órgãos",
+    descricao: "Transportar, comercializar ou distribuir grande quantidade de membros humanos, igual ou superior a 10 unidades, com finalidade ilícita.",
+    pena: 30,
+    multa: 3000,
+    fianca: 4000
+  },
+  {
+    numero: 80,
+    categoria: "Crimes Militares",
+    nome: "Crime Militar Nível 1",
+    descricao: "Descumprir ordens diretas, normas internas ou procedimentos operacionais de baixa relevância, sem gerar prejuízo significativo à hierarquia, disciplina ou funcionamento da instituição.",
+    pena: 50,
+    multa: 0,
+    fianca: null,
+    observacao: "Gravidade baixa."
+  },
+  {
+    numero: 81,
+    categoria: "Crimes Militares",
+    nome: "Crime Militar Nível 2",
+    descricao: "Violar normas, diretrizes ou ordens superiores de forma relevante, causando prejuízo à organização, disciplina ou ao bom funcionamento institucional, sem comprometer diretamente a segurança militar.",
+    pena: 75,
+    multa: 0,
+    fianca: null,
+    observacao: "Gravidade média."
+  },
+  {
+    numero: 82,
+    categoria: "Crimes Militares",
+    nome: "Crime Militar Nível 3",
+    descricao: "Cometer infrações graves contra a hierarquia, disciplina ou segurança militar, incluindo atos que coloquem em risco operações, integridade da corporação ou de terceiros.",
+    pena: 130,
+    multa: 0,
+    fianca: null,
+    observacao: "Gravidade alta."
+  },
+  {
+    numero: 83,
+    categoria: "Patrimônio",
+    nome: "Assalto a Americano",
+    descricao: "Subtrair bens de cidadão americano mediante ameaça, violência ou uso de arma branca ou de fogo.",
+    pena: 15,
+    multa: 2000,
+    fianca: 3000
+  },
+  {
+    numero: 84,
+    categoria: "Ordem Pública",
+    nome: "Fuga da Prisão",
+    descricao: "Evadir-se ou tentar evadir-se do sistema prisional após detenção legal.",
+    pena: 20,
+    multa: 3000,
+    fianca: 4000
   }
 ];
 
